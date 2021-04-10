@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:transport_app/booking.dart';
 import 'package:transport_app/my_flutter_app_icons.dart';
 import 'package:transport_app/custom.dart';
+import 'dart:math' as math; // import this
 
 class Home extends StatefulWidget {
   @override
@@ -45,7 +46,7 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               Container(
-                  margin: EdgeInsets.only(right: 170.0, top: 30.0),
+                  margin: EdgeInsets.only(right: 190.0, top: 50.0),
                   child: Text('Transport Medium',
                     style: TextStyle(
                         fontSize: 23.0,
@@ -59,47 +60,58 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                        height: 80.0,
-                        width: 100.0,
+                        height: 93.0,
+                        width: 115.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.0),
                             color: const Color(0xffF9F9F9)
                         ),
-                        child: Icon(MyFlutterApp.car_side,
-                            size: 40.0,
-                            color: const Color(0xffB6BABB)),
+                        child: Transform(
+                          transform: Matrix4.rotationY(math.pi),
+                          alignment: Alignment.center,
+                          child: Icon(MyFlutterApp.car_side,
+                              size: 40.0,
+                              color: const Color(0xffB6BABB)),
+                        ),
                     ),
                     Container(
-                      height: 80.0,
-                      width: 100.0,
+                      height: 93.0,
+                      width: 115.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
                           color: const Color(0xffF9F9F9)
                       ),
-                      child: Icon(
-                        MyFlutterApp.plane_outline,
-                        size: 40.0,
-                        color: const Color(0xffB6BABB),
+                      child: RotationTransition(
+                        turns: new AlwaysStoppedAnimation(-20 / 360),
+                        child: Icon(
+                          MyFlutterApp.plane_outline,
+                          size: 40.0,
+                          color: const Color(0xffB6BABB),
+                        ),
                       ),
                     ),
                     Container(
-                      height: 80.0,
-                      width: 100.0,
+                      height: 93.0,
+                      width: 115.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
                           color: const Color(0xff95F4FA)
                       ),
-                        child: Icon(
-                          MyFlutterApp.truck,
-                          size: 40.0,
-                          color: Colors.white,
+                        child: Transform(
+                          transform: Matrix4.rotationY(math.pi),
+                          alignment: Alignment.center,
+                          child: Icon(
+                            MyFlutterApp.truck,
+                            size: 40.0,
+                            color: Colors.white,
+                          ),
                         ),
                       )
                   ],
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(right: 280.0, top: 50.0),
+                margin: EdgeInsets.only(right: 300.0, top: 50.0),
                 child: Text('From : ',
                   style: TextStyle(
                       fontSize: 23.0,
@@ -141,7 +153,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(right: 310.0, top: 40.0, bottom: 10.0),
+                      margin: EdgeInsets.only(right: 330.0, top: 40.0, bottom: 10.0),
                       child: Text('To :',
                         style: TextStyle(
                             fontSize: 23.0,
